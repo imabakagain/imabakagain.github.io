@@ -3,75 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About the Cup</title>
+    <meta name="description" content="About - Professional background and experience">
+    <title>About - Personal Website</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            box-sizing: border-box;
         }
         
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
         }
         
         header {
-            text-align: center;
-            padding: 30px 0;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+        
+        main {
+            margin-top: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 4rem 2rem;
+        }
+        
+        .about-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         
         h1 {
-            color: #333;
+            font-size: 2.5rem;
+            color: #111827;
+            margin-bottom: 1.5rem;
         }
         
-        .cup-image {
-            display: block;
-            margin: 20px auto;
-            max-width: 300px;
-            height: auto;
+        h2 {
+            font-size: 1.5rem;
+            color: #374151;
+            margin: 2rem 0 1rem 0;
+        }
+        
+        p, li {
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .skill-tag {
+            background: #e5e7eb;
+            color: #374151;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
         }
         
         footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
+            background: #111827;
             color: white;
-            margin-top: 40px;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .about-content {
+                padding: 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>About the Cup</h1>
-        </header>
-        
-        <main>
-            <img src="/assets/images/FinLLM.png" alt="Cup illustration" class="cup-image">
+    <header>
+        <nav>
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="about-content">
+            <h1>About Me</h1>
             
-            <p>This humble cup has been crafted with care to bring joy to your daily rituals. Whether you're sipping morning coffee, afternoon tea, or evening cocoa, our cup is designed to enhance your beverage experience.</p>
+            <p>Hello! I'm a passionate developer with a focus on creating meaningful digital experiences. My journey in technology has been driven by curiosity and a desire to solve real-world problems through elegant solutions.</p>
             
-            <h2>Key Features:</h2>
+            <h2>Professional Background</h2>
+            <p>I specialize in full-stack development with expertise in modern web technologies. My work spans across various domains including financial technology, creative platforms, and conversational AI systems.</p>
+            
+            <h2>Technical Skills</h2>
+            <div class="skills">
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Cloud Computing</span>
+                <span class="skill-tag">Database Design</span>
+                <span class="skill-tag">API Development</span>
+            </div>
+            
+            <h2>Experience Highlights</h2>
             <ul>
-                <li>Durable ceramic construction</li>
-                <li>Holds 12 oz of your favorite beverage</li>
-                <li>Ergonomic handle design for comfortable grip</li>
-                <li>Available in multiple colors</li>
-                <li>Dishwasher and microwave safe</li>
+                <li>Developed financial analysis tools leveraging large language models</li>
+                <li>Built collaborative platforms for creative professionals</li>
+                <li>Created conversational AI interfaces with real-time capabilities</li>
+                <li>Implemented scalable cloud solutions for data-intensive applications</li>
             </ul>
             
-            <p>Made with sustainability in mind, our cups are crafted using eco-friendly materials and processes. Each cup comes packaged in recycled materials and is designed for long-lasting use.</p>
-        </main>
-        
-        <footer>
-            <p>&copy; 2023 Cup Company. All rights reserved.</p>
-        </footer>
-    </div>
+            <h2>Philosophy</h2>
+            <p>I believe technology should be intuitive, accessible, and serve to enhance human capabilities. Every project I undertake is an opportunity to learn, grow, and contribute to the digital landscape in meaningful ways.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Connect with me</p>
+        <a href="mailto:contact@example.com">Email</a>
+        <a href="https://github.com/imabakagain" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </footer>
 </body>
 </html>

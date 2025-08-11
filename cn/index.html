@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="人工智能研究员 & 行业分析师 - 哥伦比亚大学EE硕士，LLM、GEO、AI系统专家">
+    <title>震东的空间</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #fafafa;
+        }
+        
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+        
+        .language-switch {
+            background: #f3f4f6;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            color: #374151;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .language-switch:hover {
+            background: #e5e7eb;
+        }
+        
+        main {
+            margin-top: 80px;
+        }
+        
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 4rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero .description {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.75rem 2rem;
+            text-decoration: none;
+            border-radius: 2rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .cta-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #111827;
+        }
+        
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .achievement {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .achievement:hover {
+            transform: translateY(-4px);
+        }
+        
+        .achievement-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2563eb;
+            display: block;
+        }
+        
+        .achievement-label {
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project:hover {
+            transform: translateY(-4px);
+        }
+        
+        .project h3 {
+            color: #111827;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .project .impact {
+            color: #059669;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project p {
+            color: #6b7280;
+            line-height: 1.5;
+        }
+        
+        .education, .experience {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .education h3, .experience h3 {
+            color: #111827;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .edu-item, .exp-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .edu-item:last-child, .exp-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .edu-header, .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        
+        .edu-title, .exp-title {
+            font-weight: 600;
+            color: #111827;
+            font-size: 1.125rem;
+        }
+        
+        .edu-date, .exp-date {
+            color: #6b7280;
+            font-size: 0.875rem;
+            white-space: nowrap;
+        }
+        
+        .edu-school, .exp-company {
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .edu-details, .exp-details {
+            color: #6b7280;
+            line-height: 1.5;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .skill-tag {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .contact-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-links a:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .edu-header, .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .edu-date, .exp-date {
+                margin-top: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">震东的空间</div>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#research">研究项目</a></li>
+                <li><a href="#publications">行业报告</a></li>
+                <li><a href="#contact">联系方式</a></li>
+                <li><a href="/" class="language-switch">English</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>人工智能研究员 & 行业分析师</h1>
+            <div class="subtitle">哥伦比亚大学电气工程硕士 | LLM、GEO、AI系统专家</div>
+            <div class="description">
+                深耕AI行业研究，评测200+ AI工具，发布5+ 行业报告获得数百万浏览量，
+                专精生成式引擎优化(GEO)和AI智能体系统开发。
+            </div>
+            <div class="cta-buttons">
+                <a href="#research" class="cta-button">查看研究</a>
+                <a href="#publications" class="cta-button">下载报告</a>
+                <a href="#contact" class="cta-button">联系合作</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>核心成就</h2>
+            <div class="achievements">
+                <div class="achievement">
+                    <span class="achievement-number">200+</span>
+                    <div class="achievement-label">AI工具评测</div>
+                </div>
+                <div class="achievement">
+                    <span class="achievement-number">100万+</span>
+                    <div class="achievement-label">报告浏览量</div>
+                </div>
+                <div class="achievement">
+                    <span class="achievement-number">10倍</span>
+                    <div class="achievement-label">AI搜索优化提升</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>教育背景与经历</h2>
+            
+            <div class="education">
+                <h3>教育背景</h3>
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <div class="edu-title">电气工程硕士</div>
+                        <div class="edu-date">2017.09 - 2018.12</div>
+                    </div>
+                    <div class="edu-school">哥伦比亚大学 · 纽约，纽约州</div>
+                    <div class="edu-details">课程：大数据，机器学习，深度学习，异构计算，物联网，互联网金融</div>
+                </div>
+                
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <div class="edu-title">电子信息工程学士</div>
+                        <div class="edu-date">2013.09 - 2017.06</div>
+                    </div>
+                    <div class="edu-school">电子科技大学，格拉斯哥学院 · 成都，四川</div>
+                    <div class="edu-details">GPA: 3.74/4.0 | 国家奖学金2014(前2%) | 人民一等奖学金2015</div>
+                </div>
+            </div>
+
+            <div class="experience">
+                <h3>工作经历</h3>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div class="exp-title">AI行业分析师 & AI实验室研究员</div>
+                        <div class="exp-date">2023.12 - 至今</div>
+                    </div>
+                    <div class="exp-company">至顶科技</div>
+                    <div class="exp-details">
+                        • 主导《2024年中国AI大模型产业发展报告》编写，与人民网共同发布<br>
+                        • 编写《企业数字化转型》、《全球AIGC报告》、《DeepSeek手册》、《程序员指数》等4篇行业报告<br>
+                        • 发布大模型产业生态地图，完成数字经济洞察周报6篇<br>
+                        • 联合创建AI实验室，为10个以上AI实操视频提供软件部署及教程支持<br>
+                        • 研究测试200款以上多模态、RAG、Agent工具、AI解决方案
+                    </div>
+                </div>
+                
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div class="exp-title">软件解决方案工程师实习生</div>
+                        <div class="exp-date">2019.03 - 2019.09</div>
+                    </div>
+                    <div class="exp-company">Opengov, Inc</div>
+                    <div class="exp-details">
+                        • 使用Python, JavaScript, CSS, HTML等为产品CKAN开发多项前后端新功能<br>
+                        • 独立部署软件后台，利用Docker, Kubernetes, EC2, Datadog和Sumologic<br>
+                        • 运用Data harvesting, APIs, SQL管理数据平台，迁移数据<br>
+                        • 独立为产品CKAN写自动升级程序，使升级效率提高90%以上
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="section">
+            <h2>重点研究项目</h2>
+            <div class="projects">
+                <div class="project"><a href="/assets/report/report1.pdf" target="_blank" style="color: #111827; text-decoration: none;">
+                    <h3>《DeepSeek完全实用手册》</h3>
+                    <div class="impact">100万+浏览量，公众号涨粉近万</div>
+                    <p>深入研究DeepSeek公司特点、模型技术、模型成本、部署调用等，全网各渠道浏览量百万，为公司获企业级客户数十家。</p>
+                </a>
+                </div>
+                
+                <div class="project"><a href="/assets/report/report2.pdf" target="_blank" style="color: #111827; text-decoration: none;">
+                    <h3>《2024年中国AI大模型产业发展报告》</h3>
+                    <div class="impact">人民网联合发布，博鳌论坛发布</div>
+                    <p>主导报告撰写，设计报告框架、资料收集、专家调研、内容撰写、图片设计等，联合人民网在博鳌发布，全网浏览量数十万以上。</p>
+                </a>
+                </div>
+                
+                <div class="project"><a href="/assets/images/FinLLM.png" target="_blank" style="color: #111827; text-decoration: none;">
+                    <h3>金融问答智能体</h3>
+                    <div class="impact">3500+字段，78个数据库</div>
+                    <p>设计Dify工作流，包括复杂任务拆解、金融数据向量知识库、SQL专家等十个部分，实现仅通过自然语言在78个金融数据库中的3500个字段找到用户问题对应的答案。</p>
+                </a>
+                </div>
+
+                <div class="project"><a href="/assets/images/chatFutures.png" target="_blank" style="color: #111827; text-decoration: none;">
+                    <h3>期货背景调查工作流</h3>
+                    <div class="impact">节约90%的调查时间</div>
+                    <p>自动查询某期货产品主要产地、用途、消费者、成分等</p>
+                </a>
+                </div>                
+                <div class="project">
+                    <h3>AI搜索优化（GEO）研究</h3>
+                    <div class="impact">AI引用概率提升10倍</div>
+                    <p>研究AI搜索原理，调查统计元宝、豆包、DS等主流AI应用搜索引用规律，形成一套GEO方法，公司科技类文章被主流AI引用并排名靠前概率增加至少10倍。</p>
+                </div>
+                
+                <div class="project">
+                    <h3>大会嘉宾智能推荐应用</h3>
+                    <div class="impact">自动完成600+大会查询</div>
+                    <p>构建数据查询Dify工作流，利用AI和代码补全大会简介数据，设计问答工作流，对近千大会和近万嘉宾信息进行检索匹配问答，为新大会推荐合适的嘉宾人选。</p>
+                </div>
+                
+                <div class="project"><a href="https://github.com/imabakagain/MACD" target="_blank" style="color: #111827; text-decoration: none;">
+                    <h3>股票交易回测系统</h3>
+                    <div class="impact">年化收益率10%+</div>
+                    <p>自主设计完整A股回测系统，包括股票数据采集、数据分析、策略选择、交易策略收益回测等，2020至2021回测年化收益率约10%以上。</p>
+                </a>
+                </div>
+            </div>
+            
+            <div class="skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">TensorFlow</span>
+                <span class="skill-tag">Dify</span>
+                <span class="skill-tag">vLLM</span>
+                <span class="skill-tag">GraphRAG</span>
+                <span class="skill-tag">LLM大模型</span>
+                <span class="skill-tag">GEO优化</span>
+                <span class="skill-tag">RAG检索</span>
+                <span class="skill-tag">AI智能体</span>
+                <span class="skill-tag">AWS云服务</span>
+                <span class="skill-tag">Docker容器</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">MySQL数据库</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">CUDA加速</span>
+            </div>
+        </section>
+
+        <section id="publications" class="section">
+            <h2>行业报告与发表</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>《2024年中国AI大模型产业发展报告》</h3>
+                    <div class="impact">人民网联合发布，博鳌论坛发布</div>
+                    <p>全面分析中国AI大模型产业生态，涵盖技术趋势、市场动态和政策影响，与人民网联合发布。</p>
+                </div>
+                
+                <div class="project">
+                    <h3>《2024上市公司数字化转型报告》</h3>
+                    <div class="impact">50+企业案例研究</div>
+                    <p>深入调研企业AI采用模式、实施挑战和成功要素，为50+企业提供数字化转型指导。</p>
+                </div>
+                
+                <div class="project">
+                    <h3>《全球AIGC报告》</h3>
+                    <div class="impact">国际市场分析</div>
+                    <p>全球AI生成内容格局分析，涵盖市场规模、关键参与者和主要市场未来趋势。</p>
+                </div>
+                
+                <div class="project">
+                    <h3>《程序员幸福指数报告》</h3>
+                    <div class="impact">开发者生态洞察</div>
+                    <p>AI时代开发者趋势、技能要求和就业市场动态分析。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>联系合作</h2>
+            <p style="text-align: center; color: #6b7280; font-size: 1.125rem; margin-bottom: 2rem;">
+                对AI研究合作或行业洞察感兴趣？欢迎讨论我们如何能够合作。
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h3>联系信息</h3>
+            <div class="contact-links">
+                <a href="mailto:donald95@sina.com">邮箱联系</a>
+                <a href="https://github.com/imabakagain" target="_blank">GitHub</a>
+                <a href="/">English Version</a>
+            </div>
+            <p>&copy; 2025 AI研究作品集. 保留所有权利。</p>
+        </div>
+    </footer>
+</body>
+</html>
